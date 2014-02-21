@@ -27,6 +27,7 @@
 #include <QFile>
 #include <QLabel>
 #include <QPainter>
+#include <QStatusBar>
 #include <QTextStream>
 #include <QDomDocument>
 #include <QWidget>
@@ -42,7 +43,6 @@
 #include <KSelectAction>
 #include <KStandardAction>
 #include <KStandardDirs>
-#include <KStatusBar>
 #include <KToggleAction>
 #include <KToolBar>
 #include <KIcon>
@@ -199,11 +199,11 @@ void KLettres::setupActions()
 
 void KLettres::setupStatusbar()
 {
-    KStatusBar *st=statusBar();
+    QStatusBar *st=statusBar();
     m_langLabel = new QLabel(st);
     m_levLabel = new QLabel(st);
     st->addWidget(m_langLabel);
-    st->insertFixedItem("", 1);//add a space
+//    st->insertFixedItem("", 1);//add a space
     st->addWidget(m_levLabel);   
     statusBar();
 }
