@@ -21,11 +21,11 @@
 /*****************************************************/
 /* Please save with utf8 encoding, thanks  */
 /*****************************************************/
+#include <QApplication>
 
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <klocale.h>
-#include <kapplication.h>
 #include "klettres.h"
 #include "version.h"
 
@@ -60,7 +60,12 @@ int main(int argc, char **argv)
 
     KCmdLineOptions options;
     KCmdLineArgs::addCmdLineOptions(options);
-    KApplication app;
+    QApplication app(argc, argv);
+
+    app.setApplicationName("Klettres");
+    app.setApplicationVersion(version);
+    app.setOrganizationDomain("kde.org");
+    app.setApplicationDisplayName(i18n("Klettres"));
 
     // see if we are starting with session management
     if (app.isSessionRestored()) {
