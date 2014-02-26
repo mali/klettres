@@ -23,7 +23,7 @@
 /*****************************************************/
 #include <QApplication>
 
-#include <kaboutdata.h>
+#include <k4aboutdata.h>
 #include <kcmdlineargs.h>
 #include <klocale.h>
 #include "klettres.h"
@@ -39,8 +39,8 @@ static const char version[] = "2.1";
 
 int main(int argc, char **argv)
 {
-    KAboutData about("klettres", 0, ki18n("KLettres"), KLETTRES_VERSION, ki18n(description),
-                     KAboutData::License_GPL, ki18n("(C) 2001-2011 Anne-Marie Mahfouf"),KLocalizedString(), "http://edu.kde.org/klettres", "submit@bugs.kde.org");
+    K4AboutData about("klettres", 0, ki18n("KLettres"), KLETTRES_VERSION, ki18n(description),
+                     K4AboutData::License_GPL, ki18n("(C) 2001-2011 Anne-Marie Mahfouf"),KLocalizedString(), "http://edu.kde.org/klettres", "submit@bugs.kde.org");
     about.addAuthor( ki18n("Anne-Marie Mahfouf"), KLocalizedString(), "annma AT kde DOT org", "http://annma.blogspot.com", "annma");
     about.addCredit(ki18n("Marc Cheng"),
                     ki18n("Kids and grown-up oxygen icons"), "bdgraue AT web DOT de");
