@@ -27,7 +27,7 @@
 #include <KLocale>
 #include <KRandomSequence>
 #include <KStandardDirs>
-#include <Phonon/MediaObject>
+#include <phonon/MediaObject>
 
 #include "klettres.h"
 #include "prefs.h"
