@@ -11,19 +11,30 @@ set(klettres_SRCS
    timer.cpp )
 
 
-kde4_add_ui_files(klettres_SRCS
+qt5_wrap_ui(klettres_SRCS
     timerui.ui
     fontsdlg.ui )
 
-kde4_add_kcfg_files(klettres_SRCS prefs.kcfgc )
+kconfig_add_kcfg_files(klettres_SRCS prefs.kcfgc )
 
 #kde4_add_app_icon(klettres_SRCS "${KDE4_ICON_DIR}/oxygen/*/apps/klettres.png")
 #kde4_add_app_icon(klettres_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/ox*-apps-klettres.png")
 kde4_add_app_icon(klettres_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-apps-klettres.png")
 
-kde4_add_executable(klettres ${klettres_SRCS})
+add_executable(klettres ${klettres_SRCS})
 
-target_link_libraries(klettres  ${KDE4_KNEWSTUFF3_LIBS} ${KDE4_PHONON_LIBS} ${QT_QTXML_LIBRARY})
+target_link_libraries(klettres
+  KF5::Completion
+  KF5::Emoticons
+  KF5::NewStuff
+  KF5::I18n
+  KF5::ItemModels
+  KF5::KDE4Support
+  Qt5::Svg
+  ${PHONON_LIBRARY}
+#  ${KDE4_KNEWSTUFF3_LIBS} 
+#  ${KDE4_PHONON_LIBS} 
+  ${QT_QTXML_LIBRARY})
 
 install(TARGETS klettres  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
